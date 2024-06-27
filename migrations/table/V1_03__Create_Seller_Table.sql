@@ -1,0 +1,12 @@
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'seller') AND type in (N'U'))
+BEGIN
+    CREATE TABLE seller
+    (
+        ID INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+        SELLER_NAME VARCHAR(50) NOT NULL,
+        EMAIL VARCHAR(100) NOT NULL,
+        PASSWORD VARCHAR(400) NOT NULL,
+        BALANCE FLOAT,
+        ROLE VARCHAR(50)
+    );
+END

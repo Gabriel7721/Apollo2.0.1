@@ -1,0 +1,55 @@
+// Create new user (Post)
+http://localhost:9999/api/register
+{
+    "clientName": "Bui Tran Anh Tri",
+    "email": "tribui1990@gmail.com",
+    "password": "abcd1234"
+}
+
+// login(post)
+http://localhost:9999/api/login
+{
+    "email": "tribui1990@gmail.com",
+    "password": "abcd1234"
+}
+----------------------------------------------------------
+// Create new shipper (Post)
+http://localhost:9999/api/register/shipper
+{
+    "shipperName": "Apollo E-Commerce Shipper 1",
+    "email": "tribui2609@gmail.com",
+    "password": "abcd1234"
+}
+
+// login(post)
+http://localhost:9999/api/login/shipper
+{
+    "email": "tribui2609@gmail.com",
+    "password": "abcd1234"
+}
+------------------------------------------------------------
+
+// create new admin(post)
+http://localhost:9999/api/register/admin
+{
+    "adminName": "APOLLO_ADMINISTRATOR",
+    "email": "tribui7721@gmail.com",
+    "password": "abcd1234"
+}
+
+// login admin (POST)
+http://localhost:9999/api/login/admin
+{
+    "email": "tribui7721@gmail.com",
+    "password": "abcd1234"
+}
+-------------------------------------------------------------
+// (GET) Login admin details by id with "Authorization Tab + Bearer token" (must create by POST)
+http://localhost:9999/api/admins/1
+
+// (GET) Login shippers details by id with "Authorization Tab + Bearer token" (must create by POST)
+http://localhost:9999/api/shippers/1
+
+// (GET) Login users details by id with "Authorization Tab + Bearer token" (must create by POST)
+http://localhost:9999/api/users/1
+----------------------------------------------------------------

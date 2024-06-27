@@ -1,0 +1,33 @@
+### ADD cart-line by cart-id
+POST http://localhost:9999/api/cart-lines/add-to-cart
+Content-Type: application/json
+
+{
+  "quantity": 49,
+  "cartId": 1,
+  "variantId": 2
+}
+
+-----------------------------------------------------
+{
+    "id": 1,
+    "quantity": 49,
+    "cartDto": {
+        "id": 1,
+        "userId": null
+    },
+    "variantDto": {
+        "id": 2,
+        "name": "SAMSUNG Galaxy Z Flip 999 Cell Phone",
+        "skuCode": "SKU001",
+        "stockQuantity": 50,
+        "weight": 0.7,
+        "price": 170.91,
+        "salePrice": 150.19,
+        "img": "https://m.media-amazon.com/images/I/61NKaFRAyRL._AC_SL1500_.jpg",
+        "optionValueDTOList": null,
+        "imageDTOList": null,
+        "videoDTOList": null,
+        "reviewDTOList": null
+    }
+}

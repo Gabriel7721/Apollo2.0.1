@@ -1,0 +1,9 @@
+### Create Review by userid and variant id
+POST http://localhost:9999/api/reviews/{{userId}}/{{variantId}}
+Content-Type: application/json
+
+{
+  "star": 0,
+  "title": "",
+  "content": ""
+}

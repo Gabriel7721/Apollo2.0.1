@@ -1,0 +1,9 @@
+### Create Cart By User
+POST http://localhost:9999/api/cart
+Content-Type: application/json
+
+{
+  "clientName": "Gabriel Belmont",
+  "email": "tribui1990@gmail.com",
+  "password": "abcd1234"
+}

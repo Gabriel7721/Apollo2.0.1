@@ -1,0 +1,4 @@
+IF NOT EXISTS (SELECT 1 FROM shipping_method WHERE NAME = 'STANDARD')
+BEGIN
+    INSERT INTO shipping_method (NAME, PRICE) VALUES ('STANDARD', 8);
+END

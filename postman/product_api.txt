@@ -1,0 +1,26 @@
+// (POST) create product
+http://localhost:9999/api/product-detail/create/{storeId}/{categoryId}/{storeCategoryId}
+http://localhost:9999/api/product-detail/create/1/1/1
+{
+    "title": "SAMSUNG Galaxy Z Flip 5 Cell Phone",
+    "description": "Factory Unlocked Android Smartphone, 256GB, Compact, Foldable Design, One-Hand Control, Best Selfies, Full Cover Screen, Hands-Free Use, US Version, 2023, Mint",
+    "mainPicture": "https://m.media-amazon.com/images/I/61NKaFRAyRL._AC_SL1500_.jpg",
+    "status": "Active",
+    "createAt": "2024-06-11T12:34:56Z",
+    "updatedAt": "2024-06-11T12:34:56Z"
+}
+
+// (GET) get all products details
+http://localhost:9999/api/products
+
+// (PUT) Update product by id
+http://localhost:9999/api/product-detail//update/{product_id}
+http://localhost:9999/api/product-detail//update/1
+{
+    "title": "SAMSUNG Galaxy Z Flip 6 Cell Phone",
+    "description": "Factory Unlocked Android Smartphone, 512GB, Compact, Foldable Design, One-Hand Control, Best Selfies, Full Cover Screen, Hands-Free Use, US Version, 2023, Mint",
+    "mainPicture": "https://m.media-amazon.com/images/I/61NKaFRAyRL._AC_SL1500_.jpg",
+    "status": "Active",
+    "createAt": "2024-06-11T12:35:56Z",
+    "updatedAt": "2024-06-11T12:35:56Z"
+}

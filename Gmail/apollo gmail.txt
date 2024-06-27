@@ -1,0 +1,10 @@
+apollo gmail:
+
+apollo.e.commerce.com@gmail.com
+b3WKS}!Ag@CeVb_=S'I9K}NLtk-[Q,qU8+sKBS@NpHCOjlrlUp
+
+spring.mail.username=apollo.e.commerce.com@gmail.com
+spring.mail.password=jhiftqxehdpbweyh
+
+spring.mail.username=tribtats2208033@fpt.edu.vn
+spring.mail.password=udrmdcaxghthwrcd

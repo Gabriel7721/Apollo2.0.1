@@ -1,0 +1,51 @@
+// Create new store (Post)
+http://localhost:9999/api/stores/create/{adminId}
+http://localhost:9999/api/stores/create/1
+{
+    "name": "Samsung",
+    "logo": "https://1000logos.net/wp-content/uploads/2017/06/Samsung-emblem.png",
+    "homeImage": "https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/1f6cbd86-1e6a-42d5-bd7c-e137bfef3fc6._CR0%2C0%2C3000%2C600_SX1920_.jpg",
+    "dealsImage": "https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/d055fa5e-475d-46bf-b294-20e0032ca4ae._CR0%2C0%2C3000%2C600_SX1920_.jpg",
+    "dealsSquareImage": "https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/b54208fd-28ef-4d09-87e0-e7fb7a2a63c1._CR0%2C0%2C1500%2C1500_SX480_SY480_.jpg",
+    "interactiveImage": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/4ecf88c7-c019-4a3e-8d40-6867ac6ebd8a.__CR0,0,2022,1251_PT0_SX970_V1___.png",
+}
+
+
+// (Post) Create List Store Categories: createStoreCategories
+http://localhost:9999/api/store-category/{storeId}
+http://localhost:9999/api/store-category/1
+
+---> create parent store category:
+[
+    "Phones & Watches",
+    "TV & Audio",
+    "Computing & Tablets",
+    "Home Appliances",
+    "Specialty Refrigerators"
+]
+
+---> create child store category: But recommend create in sql database
+
+// Create List of website categories
+create in sql database
+---------------------------------------------------------------------------------------------
+// (Get) Get store details by ID & store category list
+http://localhost:9999/api/stores/{store_id}
+http://localhost:9999/api/stores/1
+
+// (GET) Get Product by name (SEARCH):
+http://localhost:9999/api/stores/{store_id}/product
+http://localhost:9999/api/stores/1/product?name=SAMSUNG Galaxy Z Flip 5 Cell Phone
+Or can use Params with key & values
+
+// (GET) Get ALL products by Store id
+http://localhost:9999/api/stores/{store_id}/products
+http://localhost:9999/api/stores/1/products
+
+// (GET) get Products By StoreCategory
+http://localhost:9999/api/stores/{store_id}/products/category
+http://localhost:9999/api/stores/1/products/category?name=Phones %26 Watches
+
+// (GET) get Products By StoreSubCategory
+http://localhost:9999/api/stores/{store_id}/products/sub_category
+http://localhost:9999/api/stores/1/products/sub_category?name=Galaxy Z Series

@@ -1,0 +1,8 @@
+// (GET) category
+http://localhost:9999/api/category/{category_id}
+http://localhost:9999/api/category/1
+
+//(GET) search category
+http://localhost:9999/api/category/search?query={keywords}
+http://localhost:9999/api/category/search?query=com
+or use Params (Key = query; Value = {keywords})

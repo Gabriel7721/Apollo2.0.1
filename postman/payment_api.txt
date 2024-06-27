@@ -1,0 +1,106 @@
+### create Address
+POST http://localhost:9999/api/payments/address
+Content-Type: application/json
+
+{
+  "id": 0,
+  "userId": 0,
+  "district": "",
+  "ward": "",
+  "city": "",
+  "street": "",
+  "defaultAddress": false
+}
+------------------------------------------------------
+Status 201
+{
+    "id": 1,
+    "district": "Binh Chanh",
+    "ward": "Binh Hung",
+    "city": "Ho Chi Minh",
+    "street": "Nguyen Van Linh"
+}
+-------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------
+
+### Create Payment Method (visa/master cards...)
+POST http://localhost:9999/api/payments/payment-method
+Content-Type: application/json
+
+{
+  "id": 0,
+  "userId": 0,
+  "cartNumber": 0,
+  "nameOnCard": "",
+  "expirationDate": "",
+  "defaultPayment": false
+}
+--------------------------------------------------------
+Status 201
+{
+    "id": 1,
+    "cartNumber": 113999311,
+    "nameOnCard": "Gabriel Belmont",
+    "expirationDate": "23/06/2034",
+    "defaultPayment": true
+}
+-------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------
+
+### Get payment method from user id
+GET http://localhost:9999/api/payments/payment-method/{{userId}}
+
+-------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------
+
+### Get all shipping methods
+GET http://localhost:9999/api/payments/shipping-method
+
+-------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------
+
+### create Shop Order
+POST http://localhost:9999/api/payments
+Content-Type: application/json
+
+[
+  {
+    "userId": 0,
+    "variantId": 0,
+    "orderDate": "",
+    "addressId": 0,
+    "paymentMethodId": 0,
+    "shippingMethodId": 0,
+    "quantity": 0,
+    "orderTotal": 0
+  }
+]
+---------------------------------------------------
+[
+    {
+        "address": {
+            "id": 1,
+            "district": "Binh Chanh",
+            "ward": "Binh Hung",
+            "city": "Ho Chi Minh",
+            "street": "Nguyen Van Linh"
+        },
+        "paymentMethod": {
+            "id": 1,
+            "cartNumber": 113999311,
+            "nameOnCard": "Gabriel Belmont",
+            "expirationDate": "23/06/2034",
+            "defaultPayment": true
+        },
+        "shippingMethod": {
+            "id": 5,
+            "name": "SAME-DAY",
+            "price": 24.0
+        }
+    }
+]
+
+-------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------
+### Get all shop order from userId
+GET http://localhost:9999/api/payments/{{userId}}

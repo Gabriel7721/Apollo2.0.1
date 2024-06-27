@@ -1,0 +1,8 @@
+IF NOT EXISTS (SELECT 1 FROM shipping_method WHERE NAME = 'STANDARD')
+BEGIN
+    INSERT INTO shipping_method (NAME, PRICE) VALUES ('STANDARD', 8);
+	INSERT INTO shipping_method (NAME, PRICE) VALUES ('EXPEDITED', 12);
+	INSERT INTO shipping_method (NAME, PRICE) VALUES ('TWO-DAY', 16);
+	INSERT INTO shipping_method (NAME, PRICE) VALUES ('NEXT-DAY', 20);
+	INSERT INTO shipping_method (NAME, PRICE) VALUES ('SAME-DAY', 24);
+END

@@ -1,0 +1,30 @@
+### Create option value (blue/red/10cm/XL/S/...)
+POST http://localhost:9999/api/option-value/{{option_id}}/create
+Content-Type: application/json
+
+[
+"Red", 
+"Blue", 
+"Green"
+]
+
+
+----------------------------------------------------------------------
+Status: 201
+{
+    "optionValueDtoList": [
+        {
+            "id": 1,
+            "value": "Red"
+        },
+        {
+            "id": 2,
+            "value": "Blue"
+        },
+        {
+            "id": 3,
+            "value": "Green"
+        }
+    ],
+    "message": "OptionValue created successfully"
+}

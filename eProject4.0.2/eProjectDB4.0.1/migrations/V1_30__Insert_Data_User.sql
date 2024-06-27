@@ -1,0 +1,2 @@
+INSERT INTO users (CLIENT_NAME, PASSWORD, EMAIL, ROLE, ENABLED)
+VALUES ('Bui Tran Anh Tri', '$2a$10$OlXSbyBUcDQpIcmMMVsWhua3WnHQx9.9WTMhotFGVs2UH7ejcW7nu', 'tribui1990@gmail.com', 'ROLE_USER', 1);

@@ -1,0 +1,9 @@
+IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'cart')
+BEGIN
+    CREATE TABLE cart
+    (
+        ID INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+        USER_ID INT UNIQUE,
+        FOREIGN KEY (USER_ID) REFERENCES [user] (ID)
+    );
+END

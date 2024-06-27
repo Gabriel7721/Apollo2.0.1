@@ -1,0 +1,52 @@
+### create Product Variant With List Option Value:
+POST http://localhost:9999/api/variant/{{product_id}}/create
+Content-Type: application/json
+
+[
+  0
+]
+
+------------------------------------------------------------------
+
+### create Product Variant Details:
+POST http://localhost:9999/api/variant/{{product_id}}/create1
+Content-Type: application/json
+
+{
+  "name": "SAMSUNG Galaxy Z Flip 999 Cell Phone",
+  "skuCode": "SKU001",
+  "stockQuantity": 50,
+  "weight": 0.7,
+  "price": 170.91,
+  "salePrice": 150.19,
+  "img": "https://m.media-amazon.com/images/I/61NKaFRAyRL._AC_SL1500_.jpg"
+}
+------------------------------------------------
+Status 201
+{
+    "message": "Variant created successfully",
+    "variant_id": 1
+}
+------------------------------------------------------------------
+### update Variant
+PUT http://localhost:9999/api/variant/update/{{variant_id}}
+Content-Type: application/json
+
+{
+  "name": "",
+  "skuCode": "",
+  "stockQuantity": 0,
+  "weight": 0,
+  "price": 0,
+  "salePrice": 0,
+  "img": "",
+  "product_id": 0
+}
+
+-------------------------------------------------------------------
+### Delete variant
+DELETE http://localhost:9999/api/variant/delete/{{variant_id}}
+--------------------------------------------------------------------
+
+### Get all variant by product id
+GET http://localhost:9999/api/variant/{{productId}}

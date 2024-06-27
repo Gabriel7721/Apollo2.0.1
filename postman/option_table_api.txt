@@ -1,0 +1,22 @@
+### Create option for product (color/size/material)
+POST http://localhost:9999/api/option/{{product_id}}/create
+Content-Type: application/json
+
+[
+"Color", 
+"Size", 
+"Material"
+]
+
+---------------------------------------------------------------------
+Status: 201
+{
+    "optionTableDtoList": [
+        {
+            "id": 1,
+            "name": "Color",
+            "optionValueDTOList": null
+        }
+    ],
+    "message": "Option created successfully"
+}

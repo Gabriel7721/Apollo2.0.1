@@ -1,0 +1,1 @@
+// Shipping method create directly on SQL Server by insert query

@@ -1,0 +1,1 @@
+INSERT IGNORE INTO shipping_method (NAME, PRICE) VALUES ('STANDARD', 8);
