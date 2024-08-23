@@ -141,12 +141,57 @@ SET img = 'https://m.media-amazon.com/images/I/61NKaFRAyRL._AC_SL1500_.jpg',
     weight = 0.65,
     product_id = 1
 WHERE id = 7;
-
+go
+select * from variant
+go
+select * from variant_optionvalue
 UPDATE variant_optionvalue
-SET variant_id = 6, optionvalue_id = 6
-WHERE variant_id = 6 AND optionvalue_id = 4;
+SET variant_id = 13, optionvalue_id = 2
+WHERE variant_id = 13 AND optionvalue_id = 7;
+go
 
-UPDATE variant_optionvalue
-SET variant_id = 6, optionvalue_id = 4
-WHERE variant_id = 6 AND optionvalue_id = 6;
+UPDATE product
+SET store_category_id = 98
+WHERE id = 16
+go
+select * from product
+go
+select * from optionvalue
+select * from option_table
+select * from variant_optionvalue
+select * from variant
+
+DELETE FROM variant_optionvalue 
+WHERE variant_id = 13 AND optionvalue_id = 7;
+
+DELETE FROM option_table 
+WHERE id = 65;
+go
+select * from option_table
+go
+DELETE FROM optionvalue 
+WHERE id = 65;
+go
+select * from optionvalue
+go
+
+INSERT INTO variant_optionvalue (variant_id, optionvalue_id)
+VALUES (13, 2);
+INSERT INTO variant_optionvalue (variant_id, optionvalue_id)
+VALUES (13, 7);
+
+DELETE FROM option_table 
+WHERE id = 44;
+go
+select * from product
+go
+
+UPDATE product
+SET create_at = '2024-08-07 19:42:52.740', updated_at = '2024-08-07 20:55:46.567', store_category_id = 98
+WHERE id = 14;
+go
+select * from store_category
+go
+
+
 

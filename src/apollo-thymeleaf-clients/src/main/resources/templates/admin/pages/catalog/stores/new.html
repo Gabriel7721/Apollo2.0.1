@@ -1,0 +1,300 @@
+<th:block th:fragment="styles">
+    <link th:href="@{/plugins/custom/datatables/datatables.bundle.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/css/save-catalog.css}" rel="stylesheet" type="text/css" />
+    <style>
+        .image-input-placeholder {
+            background-image: url('/media/illustrations/blank-image.svg');
+        }
+
+        [data-bs-theme="dark"] .image-input-placeholder {
+            background-image: url('/media/illustrations/blank-image-dark.svg');
+        }
+    </style>
+</th:block>
+
+<th:block th:fragment="scripts">
+    <script th:src="@{/js/custom/catalog/stores/save.js}"></script>
+    <script th:src="@{/plugins/custom/formrepeater/formrepeater.bundle.js}"></script>
+    <script th:src="@{/plugins/custom/datatables/datatables.bundle.js}"></script>
+</th:block>
+
+<th:block th:fragment="content">
+    <form th:action="@{/dashboard/catalog/stores}" th:object="${store}" method="post" id="kt_ecommerce_add_store_form"
+        class="form d-flex flex-column flex-lg-row" th:data-kt-redirect="@{/dashboard/catalog/stores}"
+        enctype="multipart/form-data">
+
+        <div class="d-flex flex-column flex-row-fluid gap-7 gap-lg-10">
+            <div class="card card-flush py-4">
+                <div class="card-header">
+                    <div class="card-title">
+                        <h2>General</h2>
+                    </div>
+                </div>
+
+                <div class="card-body pt-0">
+                    <div class="mb-10 fv-row">
+                        <label class="required form-label">Store Name</label>
+                        <input type="text" th:field="*{name}" class="form-control mb-2" placeholder="Store name"
+                            name="attribute" />
+                        <div class="text-muted fs-7">A Store name is required and recommended to be unique.</div>
+                    </div>
+
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-lg-3 col-md-6 mb-7 me-lg-10">
+                            <div class="card card-flush py-4">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <h2>Cover photo</h2>
+                                    </div>
+                                </div>
+                                <div class="card-body text-center pt-0">
+                                    <div class="image-input image-input-empty image-input-outline image-input-placeholder mb-3"
+                                        data-kt-image-input="true">
+                                        <div class="image-input-wrapper w-150px h-150px"></div>
+                                        <label
+                                            class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                            data-kt-image-input-action="change" data-bs-toggle="tooltip"
+                                            title="Change photo">
+                                            <i class="ki-duotone ki-pencil fs-7">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                            <input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
+                                            <input type="hidden" name="avatar_remove" />
+                                        </label>
+                                        <span
+                                            class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                            data-kt-image-input-action="cancel" data-bs-toggle="tooltip"
+                                            title="Cancel photo">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                        <span
+                                            class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                            data-kt-image-input-action="remove" data-bs-toggle="tooltip"
+                                            title="Remove avatar">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 mb-7 me-lg-10">
+                            <div class="card card-flush py-4">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <h2>Cover photo 1</h2>
+                                    </div>
+                                </div>
+                                <div class="card-body text-center pt-0">
+                                    <div class="image-input image-input-empty image-input-outline image-input-placeholder mb-3"
+                                        data-kt-image-input="true">
+                                        <div class="image-input-wrapper w-150px h-150px"></div>
+                                        <label
+                                            class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                            data-kt-image-input-action="change" data-bs-toggle="tooltip"
+                                            title="Change photo">
+                                            <i class="ki-duotone ki-pencil fs-7">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                            <input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
+                                            <input type="hidden" name="avatar_remove" />
+                                        </label>
+                                        <span
+                                            class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                            data-kt-image-input-action="cancel" data-bs-toggle="tooltip"
+                                            title="Cancel photo">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                        <span
+                                            class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                            data-kt-image-input-action="remove" data-bs-toggle="tooltip"
+                                            title="Remove avatar">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 mb-7 me-lg-10">
+                            <div class="card card-flush py-4">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <h2>Cover photo 2</h2>
+                                    </div>
+                                </div>
+                                <div class="card-body text-center pt-0">
+                                    <div class="image-input image-input-empty image-input-outline image-input-placeholder mb-3"
+                                        data-kt-image-input="true">
+                                        <div class="image-input-wrapper w-150px h-150px"></div>
+                                        <label
+                                            class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                            data-kt-image-input-action="change" data-bs-toggle="tooltip"
+                                            title="Change photo">
+                                            <i class="ki-duotone ki-pencil fs-7">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                            <input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
+                                            <input type="hidden" name="avatar_remove" />
+                                        </label>
+                                        <span
+                                            class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                            data-kt-image-input-action="cancel" data-bs-toggle="tooltip"
+                                            title="Cancel photo">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                        <span
+                                            class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                            data-kt-image-input-action="remove" data-bs-toggle="tooltip"
+                                            title="Remove avatar">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row d-flex justify-content-evenly">
+                        <div class="col-lg-3 col-md-6 mb-7 me-lg-10">
+                            <div class="card card-flush py-4">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <h2>Cover photo</h2>
+                                    </div>
+                                </div>
+                                <div class="card-body text-center pt-0">
+                                    <div class="image-input image-input-empty image-input-outline image-input-placeholder mb-3"
+                                        data-kt-image-input="true">
+                                        <div class="image-input-wrapper w-150px h-150px"></div>
+                                        <label
+                                            class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                            data-kt-image-input-action="change" data-bs-toggle="tooltip"
+                                            title="Change photo">
+                                            <i class="ki-duotone ki-pencil fs-7">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                            <input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
+                                            <input type="hidden" name="avatar_remove" />
+                                        </label>
+                                        <span
+                                            class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                            data-kt-image-input-action="cancel" data-bs-toggle="tooltip"
+                                            title="Cancel photo">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                        <span
+                                            class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                            data-kt-image-input-action="remove" data-bs-toggle="tooltip"
+                                            title="Remove avatar">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 mb-7 me-lg-10">
+                            <div class="card card-flush py-4">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <h2>Cover photo 1</h2>
+                                    </div>
+                                </div>
+                                <div class="card-body text-center pt-0">
+                                    <div class="image-input image-input-empty image-input-outline image-input-placeholder mb-3"
+                                        data-kt-image-input="true">
+                                        <div class="image-input-wrapper w-150px h-150px"></div>
+                                        <label
+                                            class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                            data-kt-image-input-action="change" data-bs-toggle="tooltip"
+                                            title="Change photo">
+                                            <i class="ki-duotone ki-pencil fs-7">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                            <input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
+                                            <input type="hidden" name="avatar_remove" />
+                                        </label>
+                                        <span
+                                            class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                            data-kt-image-input-action="cancel" data-bs-toggle="tooltip"
+                                            title="Cancel photo">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                        <span
+                                            class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                            data-kt-image-input-action="remove" data-bs-toggle="tooltip"
+                                            title="Remove avatar">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="d-flex justify-content-end">
+                <a th:href="@{/dashboard/catalog/stores}" id="kt_ecommerce_add_product_cancel"
+                    class="btn btn-light me-5">
+                    Cancel
+                </a>
+
+                <button type="submit" id="kt_ecommerce_add_store_submit" class="btn btn-primary">
+                    <span class="indicator-label">
+                        Save Changes
+                    </span>
+                    <span class="indicator-progress">
+                        Please wait...
+                        <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </form>
+</th:block>
